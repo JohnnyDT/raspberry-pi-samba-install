@@ -25,27 +25,27 @@ install_samba() {
 
     # create user
 # TODO - spytat sa na meno
-    echo -e "${GREEN}--> Creating user (pi) ...${NC}"
+    echo "${GREEN}--> Creating user (pi) ...${NC}"
     sudo smbpasswd -a pi
     
     # create folder which will be shared
 # TODO - spytat sa na cestu
-    echo -e "${GREEN}--> Creating shared folder (/home/pi/shared) ...${NC}"
+    echo "${GREEN}--> Creating shared folder (/home/pi/shared) ...${NC}"
     mkdir -p /home/pi/shared     # -p --> subdirectories
     # sudo chmod 1777 /home/pi/shared
     
     # add the following to the bottom of file '/etc/samba/smb.conf'
-    echo -e "${GREEN}--> Setting configuration file ...${NC}"
-    echo '[rpisambashare]' | sudo tee -a /etc/samba/smb.conf
-    echo '   comment = Samba' | sudo tee -a /etc/samba/smb.conf
-    echo '   path = /home/pi/shared' | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
-    echo '   writeable = yes' | sudo tee -a /etc/samba/smb.conf
-    echo '   create mask = 0777' | sudo tee -a /etc/samba/smb.conf
-    echo '   directory mask = 0777' | sudo tee -a /etc/samba/smb.conf
-    echo '   public = no' | sudo tee -a /etc/samba/smb.conf
+    echo "${GREEN}--> Setting configuration file ...${NC}"
+    echo "${BLUE}[rpisambashare]${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${BLUE}   comment = Samba${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${BLUE}   path = /home/pi/shared${NC}" | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
+    echo "${BLUE}   writeable = yes${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${BLUE}   create mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${BLUE}   directory mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${BLUE}   public = no${NC}" | sudo tee -a /etc/samba/smb.conf
 
     # restar samba service
-    echo -e "${GREEN}--> Restarting samba service ...${NC}"
+    echo "${GREEN}--> Restarting samba service ...${NC}"
     sudo systemctl restart smbd
 }
 
