@@ -11,8 +11,8 @@ PURPLE='\033[0;35m'
 
 update_and_upgrade () {
     sudo apt-get update -y --force-yes
-    sudo apt-get dist-upgrade
-    sudo apt-get autoremove
+    sudo apt-get dist-upgrade -y
+    sudo apt-get autoremove -y
 }
 
 install_samba() {
@@ -20,8 +20,8 @@ install_samba() {
     
     # install packages that require to setup Samba
     echo -e "${GREEN}--> Installing samba packages ...${NC}" 
-    sudo apt-get install --force-yes samba 
-    sudo apt-get install --force-yes samba-common-bin
+    sudo apt-get install -y --force-yes samba 
+    sudo apt-get install -y --force-yes samba-common-bin
 
     # create user
 # TODO - spytat sa na meno
@@ -36,13 +36,13 @@ install_samba() {
     
     # add the following to the bottom of file '/etc/samba/smb.conf'
     echo -e "${GREEN}--> Setting configuration file ...${NC}"
-    echo '[rpisambashare]' >> /etc/samba/smb.conf
-    echo '   comment = Samba' >> /etc/samba/smb.conf
-    echo '   path = /home/pi/shared' >> /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
-    echo '   writeable = yes' >> /etc/samba/smb.conf
-    echo '   create mask = 0777' >> /etc/samba/smb.conf
-    echo '   directory mask = 0777' >> /etc/samba/smb.conf
-    echo '   public = no' >> /etc/samba/smb.conf
+    echo '[rpisambashare]' | sudo tee -a /etc/samba/smb.conf
+    echo '   comment = Samba' | sudo tee -a /etc/samba/smb.conf
+    echo '   path = /home/pi/shared' | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
+    echo '   writeable = yes' | sudo tee -a /etc/samba/smb.conf
+    echo '   create mask = 0777' | sudo tee -a /etc/samba/smb.conf
+    echo '   directory mask = 0777' | sudo tee -a /etc/samba/smb.conf
+    echo '   public = no' | sudo tee -a /etc/samba/smb.conf
 
     # restar samba service
     echo -e "${GREEN}--> Restarting samba service ...${NC}"
