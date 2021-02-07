@@ -8,7 +8,7 @@ Install script for Raspberry Pi OS.
 Jednoduchy script pre instalaciu Samba serveru na Raspberry Pi.
 
 ```
-wget https://github.com/JohnnyDT/raspberry-pi-samba-install
+wget https://raw.githubusercontent.com/JohnnyDT/raspberry-pi-samba-install/main/install-samba.sh
 sh install-samba.sh
 ```
 
