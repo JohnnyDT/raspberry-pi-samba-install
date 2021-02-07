@@ -10,9 +10,12 @@ GREEN='\033[0;32m'
 PURPLE='\033[0;35m'
 
 update_and_upgrade () {
-    sudo apt-get update -y --force-yes
-    sudo apt-get dist-upgrade -y
-    sudo apt-get autoremove -y
+    # Update and upgrade 
+    echo "${RED}--> Update and upgrade ...${NC}" 
+    sudo apt-get -qq update -y --force-yes
+    sudo apt-get -qq dist-upgrade -y
+    sudo apt-get -qq autoremove -y
+    echo "${RED}--> Done. ${NC}" 
 }
 
 install_samba() {
@@ -20,8 +23,8 @@ install_samba() {
     
     # install packages that require to setup Samba
     echo "${GREEN}--> Installing samba packages ...${NC}" 
-    sudo apt-get install -y --force-yes samba 
-    sudo apt-get install -y --force-yes samba-common-bin
+    sudo apt-get -qq install -y --force-yes samba 
+    sudo apt-get -qq install -y --force-yes samba-common-bin
 
     # create user
 # TODO - spytat sa na meno
