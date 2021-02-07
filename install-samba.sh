@@ -12,6 +12,7 @@ PURPLE='\033[0;35m'
 update_and_upgrade () {
     sudo apt-get update -y --force-yes
     sudo apt-get upgrade
+    sudo apt-get autoremove
 }
 
 install_samba() {
