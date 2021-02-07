@@ -19,7 +19,7 @@ install_samba() {
     # https://pimylifeup.com/raspberry-pi-samba/
     
     # install packages that require to setup Samba
-    echo -e "${GREEN}--> Installing samba packages ...${NC}" 
+    echo "${GREEN}--> Installing samba packages ...${NC}" 
     sudo apt-get install -y --force-yes samba 
     sudo apt-get install -y --force-yes samba-common-bin
 
