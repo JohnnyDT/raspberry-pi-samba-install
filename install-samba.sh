@@ -36,7 +36,7 @@ install_samba() {
     
     # add the following to the bottom of file '/etc/samba/smb.conf'
     echo "${GREEN}--> Setting configuration file ...${NC}"
-    echo "${BLUE}[rpisambashare]${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${BLUE}[RPI-share]${NC}" | sudo tee -a /etc/samba/smb.conf
     echo "${BLUE}   comment = Samba${NC}" | sudo tee -a /etc/samba/smb.conf
     echo "${BLUE}   path = /home/pi/shared${NC}" | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
     echo "${BLUE}   writeable = yes${NC}" | sudo tee -a /etc/samba/smb.conf
@@ -49,5 +49,5 @@ install_samba() {
     sudo systemctl restart smbd
 }
 
-update_and_upgrade
+#update_and_upgrade
 install_samba
