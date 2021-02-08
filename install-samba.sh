@@ -19,7 +19,6 @@ update_and_upgrade () {
 }
 
 install_samba() {
-    # https://pimylifeup.com/raspberry-pi-samba/
     
     # install packages that require to setup Samba
     echo "${GREEN}--> Installing samba packages ...${NC}" 
