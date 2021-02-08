@@ -52,5 +52,5 @@ install_samba() {
     sudo systemctl restart smbd
 }
 
-#update_and_upgrade
+update_and_upgrade
 install_samba
