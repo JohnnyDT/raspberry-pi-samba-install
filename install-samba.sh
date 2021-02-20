@@ -9,7 +9,7 @@ RED2='\033[0m'
 GREEN='\033[0;32m'
 PURPLE='\033[0;35m'
 
-update_and_upgrade () {
+update_and_upgrade() {
     # Update and upgrade 
     echo "${RED}--> Update and upgrade ...${NC}" 
     sudo apt-get -qq update -y --force-yes
@@ -51,5 +51,5 @@ install_samba() {
     sudo systemctl restart smbd
 }
 
-update_and_upgrade
+# update_and_upgrade
 install_samba
