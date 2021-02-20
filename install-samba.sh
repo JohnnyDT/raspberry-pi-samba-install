@@ -22,7 +22,7 @@ install_samba() {
     
     # install packages that require to setup Samba
     echo "${GREEN}--> Installing samba packages ...${NC}" 
-    sudo apt-get -qq install -y --force-yes samba 
+    sudo apt-get -qq install -y --force-yes samba
     sudo apt-get -qq install -y --force-yes samba-common-bin
 
     # create user
@@ -38,13 +38,13 @@ install_samba() {
     
     # add the following to the bottom of file '/etc/samba/smb.conf'
     echo "${GREEN}--> Setting configuration file ...${NC}"
-    echo "${BLUE}[RPI-share]${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${BLUE}   comment = Samba${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${BLUE}   path = /home/pi/shared${NC}" | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
-    echo "${BLUE}   writeable = yes${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${BLUE}   create mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${BLUE}   directory mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${BLUE}   public = no${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${PURPLE}[RPI-share]${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${PURPLE}   comment = Samba${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${PURPLE}   path = /home/pi/shared${NC}" | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
+    echo "${PURPLE}   writeable = yes${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${PURPLE}   create mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${PURPLE}   directory mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${PURPLE}   public = no${NC}" | sudo tee -a /etc/samba/smb.conf
 
     # restar samba service
     echo "${GREEN}--> Restarting samba service ...${NC}"
