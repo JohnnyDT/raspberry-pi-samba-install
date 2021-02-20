@@ -24,18 +24,21 @@ install_samba() {
     echo "${GREEN}--> Installing samba packages ...${NC}" 
     sudo apt-get -qq install -y --force-yes samba
     sudo apt-get -qq install -y --force-yes samba-common-bin
+    echo " "
 
     # create user
 # TODO - spytat sa na meno
     echo "${GREEN}--> Creating user (pi) ...${NC}"
     echo "${GREEN}Set your password: ${NC}"
     sudo smbpasswd -a pi
+    echo " "
     
     # create folder which will be shared
 # TODO - spytat sa na cestu
     echo "${GREEN}--> Creating shared folder (/home/pi/shared) ...${NC}"
     mkdir -p /home/pi/shared     # -p --> subdirectories
     # sudo chmod 1777 /home/pi/shared
+    echo " "
     
     # add the following to the bottom of file '/etc/samba/smb.conf'
     echo "${GREEN}--> Setting configuration file ...${NC}"
@@ -48,10 +51,12 @@ install_samba() {
     echo "   directory mask = 0777" | sudo tee -a /etc/samba/smb.conf
     echo "   public = no" | sudo tee -a /etc/samba/smb.conf
     echo "${GREEN}----------------------------------${NC}"
+    echo " "
 
     # restart samba service
     echo "${GREEN}--> Restarting samba service ...${NC}"
     sudo systemctl restart smbd
+    echo " "
 }
 
 # update_and_upgrade
