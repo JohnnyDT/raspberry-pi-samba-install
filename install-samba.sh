@@ -38,15 +38,17 @@ install_samba() {
     
     # add the following to the bottom of file '/etc/samba/smb.conf'
     echo "${GREEN}--> Setting configuration file ...${NC}"
-    echo "${PURPLE}[RPI-share]${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${PURPLE}   comment = Samba${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${PURPLE}   path = /home/pi/shared${NC}" | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
-    echo "${PURPLE}   writeable = yes${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${PURPLE}   create mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${PURPLE}   directory mask = 0777${NC}" | sudo tee -a /etc/samba/smb.conf
-    echo "${PURPLE}   public = no${NC}" | sudo tee -a /etc/samba/smb.conf
+    echo "${GREEN}----------------------------------${NC}"
+    echo "[rpi-share]" | sudo tee -a /etc/samba/smb.conf
+    echo "   comment = Samba" | sudo tee -a /etc/samba/smb.conf
+    echo "   path = /home/pi/shared" | sudo tee -a /etc/samba/smb.conf     # TODO - cestu nedavat na pevno
+    echo "   writeable = yes" | sudo tee -a /etc/samba/smb.conf
+    echo "   create mask = 0777" | sudo tee -a /etc/samba/smb.conf
+    echo "   directory mask = 0777" | sudo tee -a /etc/samba/smb.conf
+    echo "   public = no" | sudo tee -a /etc/samba/smb.conf
+    echo "${GREEN}----------------------------------${NC}"
 
-    # restar samba service
+    # restart samba service
     echo "${GREEN}--> Restarting samba service ...${NC}"
     sudo systemctl restart smbd
 }

@@ -23,13 +23,12 @@ sudo apt-get purge samba samba-common
 sudo apt-get autoremove samba samba-common
 ```
 
----
-### TO-DO
-- [x] Update & upgrade
-- [x] Farebny vypis kazdeho prikazu
-- [ ] Vybranie mena
-- [ ] Vybranie zdielanej zlozky
-- [ ] Potvrdenie okna vyriesit
+### SETTING ON WINDOWS
+```
+\\raspberrypi\rpi-share
+```
+![Raspberry Pi and Samba](/images/FileExplorer.png)
+![Raspberry Pi and Samba](/images/NetworkDrive.png)
 
 ---
 ### CONFIG-FILE (SAMBA)
@@ -39,7 +38,7 @@ sudo apt-get autoremove samba samba-common
 ```
 
 ```
-[RPI-share]      
+[rpi-share]      
     comment = Samba
     path = /home/pi/shared  
     writeable = yes
@@ -58,3 +57,11 @@ OR
 ```
 service smbd status 
 ```
+
+---
+### TO-DO
+- [x] Update & upgrade
+- [x] Farebny vypis kazdeho prikazu
+- [ ] Vybranie mena
+- [ ] Vybranie zdielanej zlozky
+- [ ] Potvrdenie okna vyriesit
