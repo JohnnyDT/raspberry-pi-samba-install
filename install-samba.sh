@@ -28,6 +28,7 @@ install_samba() {
     # create user
 # TODO - spytat sa na meno
     echo "${GREEN}--> Creating user (pi) ...${NC}"
+    echo "${GREEN}Set your password: ${NC}"
     sudo smbpasswd -a pi
     
     # create folder which will be shared
