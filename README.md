@@ -17,6 +17,12 @@ Function "update_and_upgrade()" of system is off by default.
 wget https://raw.githubusercontent.com/JohnnyDT/raspberry-pi-samba-install/main/install-samba.sh
 sh install-samba.sh
 ```
+### UNINSTALL
+```
+sudo apt-get purge samba samba-common
+sudo apt-get autoremove samba samba-common
+```
+
 ---
 ### TO-DO
 - [x] Update & upgrade
