@@ -16,6 +16,7 @@ update_and_upgrade() {
     sudo apt-get -qq dist-upgrade -y
     sudo apt-get -qq autoremove -y
     echo "${RED}--> Done. ${NC}" 
+    echo " "
 }
 
 install_samba() {
