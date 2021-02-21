@@ -28,9 +28,11 @@ sudo apt-get autoremove samba samba-common
 \\raspberrypi\rpi-share
 ```
 
-![Samba - Windows](/images/FIleExplorer.png)
+![Samba - Windows](/images/Explorer.png)
 
-![Samba - Windows](/images/NetworkDrive.png)
+![Samba - Windows](/images/MapNetworkDrive.png)
+
+![Samba - Windows](/images/UserCredentials.png)
 
 ---
 ### CONFIG-FILE (SAMBA)
